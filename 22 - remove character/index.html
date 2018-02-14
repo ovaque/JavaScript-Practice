@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Remove a character </title>
+</head>
+<body>
+    <h1 id="name"> goodevil </h1>
+    <script>
+        function init() {
+        var stringName = document.getElementById("name");
+        stringName.onclick = remove;
+        }
+        function remove () {
+        var stringName = document.getElementById("name");            
+        var stringNameIs = stringName.innerHTML;
+        console.log(stringNameIs.length);
+        for ( var i =0; i < stringNameIs.length; i++){
+            console.log(stringNameIs[i]);
+        }
+        var part1 = stringNameIs.substring(1, 3);
+        console.log(part1);
+        var part2 = stringNameIs.substring(4, stringNameIs.length);
+        console.log(part2);
+        var newString = (part1 + part2);
+        stringName.innerHTML = newString;
+       
+        }
+        window.onload = init;
+    </script>
+</body>
+</html>

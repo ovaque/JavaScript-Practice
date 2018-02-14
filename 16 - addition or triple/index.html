@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Addition or Triple</title>
+</head>
+<body>
+  <div>
+    <input type="text" id="firstNumber" placeholder="Enter 1st number..">
+    <span> + </span>
+    <input type="text" id="secondNumber" placeholder="Enter 2nd Number...">
+    <button id="calc"> Calculate </button>
+    <p></p>
+    <h3 id="result"></h3>
+  </div>
+  <script>
+function init() {
+  var calc = document.getElementById("calc");
+  calc.onclick = addThis;
+  var guess = document.getElementById('secondNumber');
+  guess.onkeypress = enter;
+  }
+
+function addThis() {
+  var number1 = document.getElementById('firstNumber');
+  var no1 = number1.value;
+  var number2 = document.getElementById('secondNumber');
+  var no2 = number2.value;
+  var result = document.getElementById('result');
+  var exp = document.getElementsByTagName('p');
+  if (no1 == no2 ) {
+    var triple = no1 * 3;
+    result.innerHTML = triple;
+    exp[0].innerHTML = 'As the numbers are same';
+  } else {
+    var ans = Number(no1) + Number(no2);
+    result.innerHTML = ans;
+    exp[0].innerHTML = 'As the numbers are different';
+  }
+}
+
+function enter(e) {
+  var calc = document.getElementById('calc');
+  if (e.keyCode == 13) {
+    calc.click();
+    return false;
+  }
+}
+
+window.onload = init;
+
+  </script>
+</body>
+</html>

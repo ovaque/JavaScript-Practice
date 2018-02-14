@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Multiplication and Division </title>
+</head>
+<body>
+    <form>
+        <label for="firstGuess"> 1st Number : </label>
+        <input type="text" id="firstGuess"> <br>
+        <label for="secondGuess"> 2nd Number : </label>
+        <input type="text" id="secondGuess"> <br>
+        <button id="multiply"> Multiply </button>
+        <button id="divide"> Divide </button>
+        <h3 id="result"> </h3>
+    </form>
+    <script>
+    function init() {
+    	var num1 = document.getElementById("firstGuess");
+       var number1 = num1.value;
+      var num2 = document.getElementById("secondGuess");
+       var number2 = num2.value;
+       var resultIs = document.getElementById("result");
+        var multiPly = document.getElementById("multiply");
+        multiPly.onclick = multiplication;
+        var divIde = document.getElementById("divide");
+        divIde.onclick = divideIt;
+    }
+
+    function multiplication() {
+      
+      var multi = number1 * number2;
+        
+        resultIs.innerHTML = "The result is: " + multi;
+        return false;
+    }
+
+    function divideIt() {
+      var div = number1 / number2;
+        resultIs.innerHTML = "The result is: " + div;
+        return false;
+    }
+    window.onload = init;
+     </script>
+</body>
+</html>

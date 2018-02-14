@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Replace a string </title>
+  <style>
+  body {
+    background: #222;
+    color:#fff;
+    text-align: center;
+  }
+
+  </style>
+</head>
+
+<body>
+  <input type="text" id="input" placeholder="Enter a string...">
+  <button id="but"> Replace </button>
+  <script>
+    function init() {
+      var input = document.getElementById('input');
+      input.onkeypress = handleKey;
+      var but = document.getElementById('but');
+      but.onclick = replace;
+    }
+
+    function replace() {
+      var input = document.getElementById('input');
+      var word = input.value;
+      var answer = [];
+      for (var i = 0; i < word.length; i++) {
+        var temp = word.charCodeAt(i) + 1;
+        answer = answer + String.fromCharCode(temp);
+      }
+
+      input.value = answer;
+    }
+
+    function handleKey(e) {
+      var but = document.getElementById('but');
+      if (e.keyCode == 13 ) {
+        but.click();
+      }
+    }
+
+    window.onload = init;
+  </script>
+
+</body>
+
+</html>

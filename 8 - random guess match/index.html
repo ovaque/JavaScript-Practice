@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Random number guess work </title>
+    <style>
+        *{
+            text-align: center;
+            color:#fff;
+            border-radius:10px;
+        }
+
+        body{
+            background-color:#111;
+        }
+
+        div {
+            margin-top:100px;
+        }
+
+        div button {
+            background-color: red;
+            padding:10px 20px;
+        }
+
+        div input {
+            color:#111;
+            padding:10px 20px;
+        }
+
+    
+    </style>
+</head>
+
+<body>
+    <div>
+    <h1> Let's Guess a number between 0-10</h1>
+    <label for="userGuess"> Enter your Guess here...</label>
+    <input type="text" id="userGuess" placeholder="0-10">
+    <button id="tryButton"> Try! </button>
+    <h1 id="outPut"> </h1>
+    <script>
+        function init() {
+            var tryButton = document.getElementById("tryButton");
+            tryButton.onclick = guesswork;
+
+        }
+
+        function guesswork() {
+
+            var userGuess = document.getElementById("userGuess");
+            var guess = userGuess.value;
+            var output = document.getElementById("outPut");
+            if (guess >= 0 && guess <= 10) {
+                var browserGuess = Math.floor(Math.random() * 11);
+                console.log(browserGuess);
+                if (guess == browserGuess) {
+
+                    output.innerHTML = "Good Work ...";
+                } else {
+                    output.innerHTML = " No Match...";
+                }
+            } else {
+                output.innerHTML = " Try a valid number...";
+            }
+            userGuess.value = "";
+        }
+
+
+        window.onload = init;
+    </script>
+    </div>
+
+
+</body>
+
+</html>

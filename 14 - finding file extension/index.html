@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Return file extension </title>
+  <style>
+  body{
+    width:200px;
+    margin:20px auto;
+  }
+
+  </style>
+</head>
+
+<body>
+  <img class="file" src="web.png" alt="png">
+  <h1></h1>
+  <img class="file" src="pic.jpg" alt="jpg">
+  <h1></h1>
+  <audio class="file" src="Baby.mp3" controls></audio>
+  <h1></h1>
+  <video class="file" src="video.mp4" controls></video>
+  <h1></h1>
+  <script>
+    function init() {
+      var image = document.getElementsByClassName('file');
+      var file = document.getElementsByTagName('h1');
+      for (var i = 0; i < image.length; i++) {
+        var image1 = image[i].src;
+        var trim = image1.indexOf('.');
+        var ext = image1.substring(trim, image1.length);
+        console.log(ext);
+        file[i].innerHTML = ext;
+      }
+    }
+
+    window.onload = init;
+  </script>
+</body>
+
+</html>

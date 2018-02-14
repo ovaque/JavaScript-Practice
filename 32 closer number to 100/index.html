@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Closer to hundred </title>
+</head>
+
+<body>
+  <input type="text" id="firstNumber" placeholder="First Number">
+  <input type="text" id="secondNumber" placeholder=" Second Number">
+  <button> Tell me!</button>
+  <h1 id="ans"></h1>
+  <script>
+    function init() {
+      //var guess = document.getElementsByTagName('input');
+      //guess[1].onkeypress = key;
+      var butt = document.getElementsByTagName('button');
+      butt[0].onclick = closer;
+    }
+
+    function closer() {
+      var guess = document.getElementsByTagName('input');
+      var answer = document.getElementById('ans');
+      if (Math.abs(guess[0].value - 100) < Math.abs(guess[1].value - 100)) {
+        answer.innerHTML =  " first is closer!";
+      } else {
+        answer.innerHTML =  " second is closer!";
+      }
+    }
+
+    window.onload = init;
+  </script>
+</body>
+
+</html>

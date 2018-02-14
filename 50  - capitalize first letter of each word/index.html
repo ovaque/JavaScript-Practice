@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Capitalize letter</title>
+</head>
+
+<body>
+  <input type="text" id="input" placeholder="Enter a string..">
+  <button id="but"> Capitalize</button>
+  <script>
+    function init() {
+      var input = document.getElementById('input');
+      // input.onkeypress = handleKey;
+      var but = document.getElementById('but');
+      but.onclick = capital;
+    }
+
+    function capital() {
+      var input = document.getElementById('input');
+      var word = input.value;
+      /*
+        input.value = String.fromCharCode(letter); */
+      var space = word.indexOf(" ");
+      var neWord = word.substring(0, space);
+      var letter = neWord.charCodeAt(0) - 32;
+      letter = String.fromCharCode(letter);
+      var leta = neWord.substring(1, space);
+      var final = letter + leta;
+      console.log(final);
+      input.value = final;
+    }
+
+    window.onload = init;
+  </script>
+</body>
+
+</html>

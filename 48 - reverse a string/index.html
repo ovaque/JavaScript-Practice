@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Reverse a string </title>
+  <style >
+  body {
+    background: #222;
+    color:#fff;
+    text-align: center;
+  }
+  </style>
+</head>
+
+<body>
+  <input type="text" id="input" placeholder="Enter a word">
+  <button id="rev"> Reverse </button>
+  <script>
+    function init() {
+      var input = document.getElementById('input');
+      input.onkeypress = handleKey;
+      var but = document.getElementById('rev');
+      but.onclick = reverse;
+    }
+
+    function reverse() {
+      var inp = document.getElementById('input');
+      var word = inp.value;
+      var j = word.length;
+      var temp = [];
+      var answer = [];
+      var newAns = [];
+      for (var i = 0; i < j; i++) {
+        temp[(j - 1) - i] = word[i];
+        answer[(j - 1) - i] = temp[(j - 1) - i];
+      }
+
+      for (var i = 0; i < answer.length; i++) {
+        newAns = newAns + answer[i];
+      }
+
+      inp.value = newAns;
+    }
+
+    function handleKey(e) {
+    	var but = document.getElementById('rev');
+    	if( e.keyCode == 13) {
+    		but.click();
+    		return false;
+    	}
+    }
+
+    window.onload = init;
+  </script>
+
+</body>
+
+</html>

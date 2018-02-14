@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Copies of string </title>
+  <style>
+    body {
+      background: #222;
+      color: #fff;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text" id="input" placeholder="Enter a string...">
+  <button id="but"> Tell</button>
+  <h3></h3>
+  <h3></h3>
+  <h3></h3>
+  <h3></h3>
+  <h3></h3>
+  <script>
+    function init() {
+      var input = document.getElementById('input');
+        input.onkeypress = handleKey;
+      var but = document.getElementById('but');
+      but.onclick = copies;
+    }
+
+    function copies() {
+      var inp = document.getElementById('input');
+      var input = inp.value;
+      var copy = document.getElementsByTagName('h3');
+      for (var i = 0; i < copy.length; i++) {
+        copy[i].innerHTML = input;
+      }
+
+    }
+
+    function handleKey(e) {
+      var but = document.getElementById('but');
+      if (e.keyCode == 13) {
+        but.click();
+        //return false;
+      }
+    }
+
+    window.onload = init;
+  </script>
+</body>
+
+</html>

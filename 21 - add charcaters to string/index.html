@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Add characters </title>
+    <style>
+        body{
+            background: #222;
+            text-align: center;
+            color:#fff;
+        }
+
+        button{
+            color:#222;
+        }
+
+    
+    </style>
+</head>
+<body>
+    <label for="userInput"> Enter a string:</label>
+    <input type="text" id="userInput">
+    <button id="check"> Check</button>
+    <script>
+        function init() {
+            var checkButton = document.getElementById("check");
+            checkButton.onclick = checkString;
+        }
+
+        function checkString() {
+            var userInput = document.getElementById("userInput");
+            var userString = userInput.value;
+            if( userString[0] === "p" || userString[1] === "y" || userString[0] === "P" || userString[1] === "Y") {
+                userInput.value = "word starts with py";
+            } else {
+                var part1 = "py";
+                var newString = part1 + userString;
+                userInput.value = newString;
+            }
+        }
+        window.onload = init;
+    
+    </script>
+</body>
+</html>

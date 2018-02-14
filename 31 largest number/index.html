@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Largest Number </title>
+  <style>
+  body {
+    background: #222;
+    color:#fff;
+    text-align: center;
+  }
+
+  </style>
+</head>
+
+<body>
+  <input type="text" id="firstNumber" placeholder=" Enter first number ">
+  <input type="text" id="secondNumber" placeholder=" Enter second number">
+  <input type="text" id="thirdNumber" placeholder="Enter third number">
+  <button id="but"> Largest No.</button>
+  <h3 id="ans"></h3>
+  <script>
+    function init() {
+      var but = document.getElementById('but');
+      but.onclick = calculate;
+      var input = document.getElementsByTagName('input');
+      input[2].onkeypress = handleKey;
+    }
+
+    function calculate() {
+      var input = [];
+      var inp = document.getElementsByTagName('input');
+      for (var i = 0; i < inp.length; i++) {
+        input[i] = inp[i].value;
+        console.log(typeof input);
+      }
+
+      console.log(input[1]);
+
+      var answer = document.getElementById('ans');
+      if (Number(input[0]) > Number(input[1]) && Number(input[0]) > Number(input[2])) {
+        answer.innerHTML = "first is largest";
+      } else if (Number(input[1]) > Number(input[0]) && Number(input[1]) > Number(input[2])) {
+        answer.innerHTML = "second is largest";
+      } else {
+        answer.innerHTML = "third is largest";
+      }
+    }
+
+    function handleKey(e) {
+      var but = document.getElementById('but');
+      if (e.keyCode == 13) {
+        but.click();
+        return false;
+      }
+    }
+
+    window.onload = init;
+  </script>
+</body>
+
+</html>

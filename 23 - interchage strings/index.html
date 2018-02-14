@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Interchange words </title>
+</head>
+<body>
+  <input type="text" id="userInput" placeholder="Enter a word here">
+  <button> Interchange</button>
+  <script>
+    function init() {
+
+      var butt = document.getElementsByTagName('button');
+      butt[0].onclick = interchange;
+      var text = document.getElementById('userInput');
+      text.onkeypress = key;
+    }
+
+    function interchange() {
+      var text = document.getElementById('userInput');
+      var guess = text.value;
+      var first = guess.charAt(0);
+      var last = guess.charAt(guess.length - 1);
+      console.log(last);
+      var newWord = guess.substring(1, guess.length - 1);
+      console.log(newWord);
+      var finalWord = last + newWord + first;
+      console.log(finalWord);
+      text.value = finalWord;
+    }
+
+    function key(e) {
+      var butt = document.getElementsByTagName('button');
+      if (e.keyCode === 13) {
+        butt[0].click();
+        return false;
+      }
+
+    }
+
+    window.onload = init;
+
+  </script>
+</body>
+</html>
